@@ -1,0 +1,19 @@
+[0;1;32m●[0m rabbitmq-server.service - RabbitMQ Messaging Server
+   Loaded: loaded (/lib/systemd/system/rabbitmq-server.service; enabled; vendor preset: enabled)
+   Active: [0;1;32mactive (running)[0m since Wed 2019-08-07 16:47:48 CST; 4h 0min ago
+ Main PID: 4478 (rabbitmq-server)
+    Tasks: 78
+   Memory: 56.6M
+      CPU: 4min 52.881s
+   CGroup: /system.slice/rabbitmq-server.service
+           ├─4478 /bin/sh /usr/sbin/rabbitmq-server
+           ├─4512 /bin/sh -e /usr/lib/rabbitmq/bin/rabbitmq-server
+           ├─4572 /usr/lib/erlang/erts-7.3/bin/epmd -daemon
+           ├─4634 /usr/lib/erlang/erts-7.3/bin/beam.smp -W w -A 64 -P 1048576 -K true -B i -- -root /usr/lib/erlang -progname erl -- -home /var/lib/rabbitmq -- -pa /usr/lib/rabbitmq/lib/rabbitmq_server-3.5.7/sbin/../ebin -noshell -noinput -s rabbit boot -sname rabbit@ubuntu -boot start_sasl -kernel inet_default_connect_options [{nodelay,true}] -sasl errlog_type error -sasl sasl_error_logger false -rabbit error_logger {file,"/var/log/rabbitmq/rabbit@ubuntu.log"} -rabbit sasl_error_logger {file,"/var/log/rabbitmq/rabbit@ubuntu-sasl.log"} -rabbit enabled_plugins_file "/etc/rabbitmq/enabled_plugins" -rabbit plugins_dir "/usr/lib/rabbitmq/lib/rabbitmq_server-3.5.7/sbin/../plugins" -rabbit plugins_expand_dir "/var/lib/rabbitmq/mnesia/rabbit@ubuntu-plugins-expand" -os_mon start_cpu_sup false -os_mon start_disksup false -os_mon start_memsup false -mnesia dir "/var/lib/rabbitmq/mnesia/rabbit@ubuntu" -kernel inet_dist_listen_min 25672 -kernel inet_dist_listen_max 25672
+           ├─4725 inet_gethost 4
+           └─4726 inet_gethost 4
+
+Aug 07 16:47:43 ubuntu systemd[1]: Starting RabbitMQ Messaging Server...
+Aug 07 16:47:44 ubuntu rabbitmq[4479]: Waiting for rabbit@ubuntu ...
+Aug 07 16:47:44 ubuntu rabbitmq[4479]: pid is 4512 ...
+Aug 07 16:47:48 ubuntu systemd[1]: Started RabbitMQ Messaging Server.
